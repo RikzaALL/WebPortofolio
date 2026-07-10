@@ -8,6 +8,9 @@ Route::view('/about', 'pages.about')->name('about');
 Route::view('/projects', 'pages.projects')->name('projects');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/uses', 'pages.uses')->name('uses');
+Route::get('/resume', function () {
+    return view('pages.resume');
+})->name('resume');
 
 Route::get('/robots.txt', function () {
     return response()->view('seo.robots')->header('Content-Type', 'text/plain');

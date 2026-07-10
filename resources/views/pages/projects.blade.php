@@ -25,9 +25,9 @@
             </div>
             <div class="p-6 lg:p-8">
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 text-xs font-medium bg-accent/10 text-accent rounded-full">Laravel</span>
-                <span class="px-3 py-1 text-xs font-medium bg-white/5 text-secondary rounded-full">Tailwind</span>
-                <span class="px-3 py-1 text-xs font-medium bg-white/5 text-secondary rounded-full">Cloudflare</span>
+                <span class="px-3 py-1 text-xs font-medium bg-accent/10 text-accent rounded-full">Tailwind CSS</span>
+                <span class="px-3 py-1 text-xs font-medium bg-white/5 text-secondary rounded-full">SEO</span>
+                <span class="px-3 py-1 text-xs font-medium bg-white/5 text-secondary rounded-full">JS</span>
               </div>
               <h3 class="text-xl font-bold text-primary mb-2">Hayya Modiste</h3>
               <p class="text-sm text-secondary/80 mb-4">Business landing page for a fashion brand with WhatsApp integration and SEO optimization.</p>

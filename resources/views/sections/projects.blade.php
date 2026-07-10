@@ -13,7 +13,7 @@
         [
           'title' => 'Hayya Modiste',
           'desc' => 'Business landing page for a fashion brand — fully responsive, SEO-optimized, with WhatsApp integration.',
-          'tags' => ['Laravel', 'Tailwind', 'MySQL'],
+          'tags' => ['Tailwind CSS', 'SEO', 'JS'],
           'link' => 'https://hayyamodiste.my.id',
           'image' => asset('images/hayya-modiste.jpg'),
         ],

@@ -11,7 +11,7 @@
           <p class="text-accent font-medium text-sm tracking-widest uppercase">Web Developer</p>
           <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-primary leading-[1.1] tracking-tight whitespace-nowrap">
             Hi, I'm
-            <span class="bg-gradient-to-r from-primary via-accent to-hover bg-clip-text text-transparent animate-gradient inline-block" x-data="{ text: '', fullText: 'Rikza Alif Muharom.', show: false }" x-init="show = true; let i = 0; let interval = setInterval(() => { text = fullText.slice(0, i + 1); i++; if (i >= fullText.length) clearInterval(interval); }, 60)"><span x-text="text"></span><span class="animate-pulse" x-show="text.length < fullText.length">|</span></span>
+            <span class="bg-gradient-to-r from-primary via-accent to-hover bg-clip-text text-transparent animate-gradient inline-block" x-data="{ text: '', fullText: 'Rikza Alif Muharom.', cursor: true }" x-init="async () => { while (true) { text = ''; for (let i = 0; i <= fullText.length; i++) { text = fullText.slice(0, i); await new Promise(r => setTimeout(r, 60)); } await new Promise(r => setTimeout(r, 1000)); for (let i = fullText.length; i >= 0; i--) { text = fullText.slice(0, i); await new Promise(r => setTimeout(r, 30)); } await new Promise(r => setTimeout(r, 500)); } }"><span x-text="text"></span><span class="animate-pulse" x-show="text.length < fullText.length">|</span></span>
           </h1>
           <h2 class="text-xl sm:text-2xl lg:text-3xl text-secondary font-medium leading-snug max-w-xl">
             I build modern business websites that are fast, beautiful, and SEO-friendly.

@@ -30,7 +30,7 @@
           </a>
         @endforeach
         <a
-          href="{{ asset('resume.pdf') }}"
+          href="{{ route('resume') }}"
           target="_blank"
           class="ml-2 px-5 py-2 text-sm font-medium text-white bg-accent hover:bg-hover rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
         >
@@ -71,7 +71,7 @@
         </a>
       @endforeach
       <a
-        href="{{ asset('resume.pdf') }}"
+        href="{{ route('resume') }}"
         target="_blank"
         class="block px-4 py-3 text-sm font-medium text-white bg-accent hover:bg-hover rounded-xl transition-colors text-center"
       >
