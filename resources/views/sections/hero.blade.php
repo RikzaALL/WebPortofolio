@@ -1,5 +1,4 @@
 <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-20">
-  <div id="three-canvas" x-data="threeHero" class="absolute inset-0 z-[2] pointer-events-none"></div>
   <div class="absolute inset-0 z-[3] pointer-events-none">
     <div class="absolute inset-0 dot-grid"></div>
     <div class="absolute inset-0 dot-blur"></div>

@@ -22,27 +22,21 @@ document.addEventListener('alpine:init', () => {
       }, { passive: true })
     }
   }))
-
-  Alpine.data('threeHero', () => ({
-    cleanup: null,
-    ready: false,
-    async init() {
-      this.$nextTick(async () => {
-        const { initHeroScene } = await import('./three-scene')
-        this.cleanup = initHeroScene(this.$el)
-        this.ready = true
-        requestAnimationFrame(() => this.$el.classList.add('scene-ready'))
-      })
-    },
-    destroy() {
-      if (this.cleanup) this.cleanup()
-    }
-  }))
 })
 
 Alpine.start()
 
+async function initThreeScene() {
+  const canvas = document.getElementById('three-canvas')
+  if (!canvas) return
+  const { initHeroScene } = await import('./three-scene')
+  const cleanup = initHeroScene(canvas)
+  requestAnimationFrame(() => canvas.classList.add('scene-ready'))
+  window.__threeCleanup = cleanup
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initThreeScene()
   initSmoothScroll()
   initReadingProgress()
   initParallax()

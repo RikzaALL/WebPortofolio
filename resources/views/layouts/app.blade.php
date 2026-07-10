@@ -48,6 +48,7 @@
 <body class="antialiased">
   <div id="reading-progress"></div>
   <div id="custom-cursor"></div>
+  <div id="three-canvas"></div>
 
   <x-navbar />
 
