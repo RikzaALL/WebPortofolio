@@ -5,7 +5,8 @@
 @section('description', 'See the tools, software, and hardware I use for web development.')
 
 @section('content')
-  <section class="pt-32 pb-24 lg:pb-32">
+  <section class="pt-32 pb-24 lg:pb-32 relative overflow-hidden">
+    <x-dot-bg />
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Uses</p>

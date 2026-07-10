@@ -1,4 +1,5 @@
-<section id="about" class="py-24 lg:py-32">
+<section id="about" class="py-24 lg:py-32 relative overflow-hidden">
+  <x-dot-bg />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div data-reveal data-reveal-dir="left">

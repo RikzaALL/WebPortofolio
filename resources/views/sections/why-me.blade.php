@@ -1,4 +1,5 @@
-<section class="py-24 lg:py-32">
+<section class="py-24 lg:py-32 relative overflow-hidden">
+  <x-dot-bg />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-16" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Why Me</p>

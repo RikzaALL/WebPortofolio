@@ -187,24 +187,16 @@
   will-change: transform;
 }
 
-.hero-dot-grid {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.dot-grid {
   background-image:
     radial-gradient(circle, rgba(59, 130, 246, 0.12) 1.5px, transparent 1.5px);
   background-size: 40px 40px;
-  pointer-events: none;
   animation: dot-pulse 8s ease-in-out infinite;
 }
 
-.hero-blur-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.dot-blur {
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
-  pointer-events: none;
   mask-image: radial-gradient(ellipse 80% 60% at center, black 20%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at center, black 20%, transparent 70%);
 }

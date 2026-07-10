@@ -1,4 +1,5 @@
-<section id="projects" class="py-12 lg:py-16">
+<section id="projects" class="py-12 lg:py-16 relative overflow-hidden">
+  <x-dot-bg />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-8" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-xs tracking-widest uppercase mb-2">Portfolio</p>

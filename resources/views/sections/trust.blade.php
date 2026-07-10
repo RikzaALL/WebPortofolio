@@ -1,4 +1,5 @@
-<section class="py-16 border-y border-white/5">
+<section class="py-16 border-y border-white/5 relative overflow-hidden">
+  <x-dot-bg />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <p class="text-center text-xs text-secondary uppercase tracking-widest mb-10 font-medium">Trusted Technologies</p>
     <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12" data-reveal data-reveal-dir="up">

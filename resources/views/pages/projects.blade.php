@@ -5,7 +5,8 @@
 @section('description', 'Explore my portfolio of web development projects including business landing pages, full-stack applications, and AI-powered tools.')
 
 @section('content')
-  <section class="pt-32 pb-24 lg:pb-32">
+  <section class="pt-32 pb-24 lg:pb-32 relative overflow-hidden">
+    <x-dot-bg />
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Portfolio</p>
