@@ -1,6 +1,6 @@
 <section class="py-24 lg:py-32 bg-surface/30">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Testimonials</p>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
         What People Say

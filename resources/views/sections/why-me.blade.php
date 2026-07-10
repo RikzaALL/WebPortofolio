@@ -1,6 +1,6 @@
 <section class="py-24 lg:py-32">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Why Me</p>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
         Why Work With Me
@@ -18,7 +18,7 @@
       ];
     @endphp
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-reveal data-reveal-dir="up">
       @foreach ($reasons as $reason)
         <div class="glass rounded-2xl p-6 hover:bg-white/[0.04] transition-all duration-300 group cursor-default">
           <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">

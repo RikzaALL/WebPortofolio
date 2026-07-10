@@ -1,6 +1,6 @@
 <section class="py-24 lg:py-32">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Open Source</p>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
         GitHub Activity
@@ -24,7 +24,7 @@
       }
     @endphp
 
-    <div x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'" class="flex flex-col items-center">
+    <div data-reveal data-reveal-dir="up" class="flex flex-col items-center">
       <div class="glass rounded-2xl p-6 lg:p-8 mb-8 w-full max-w-4xl">
         <h3 class="text-sm font-semibold text-primary mb-4">Contribution Graph ({{ date('Y') }})</h3>
         <div class="overflow-x-auto pb-2 flex justify-center">

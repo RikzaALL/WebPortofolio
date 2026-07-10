@@ -1,5 +1,8 @@
 import './bootstrap';
 import Alpine from 'alpinejs'
+import { initSmoothScroll, initReadingProgress, initScrollReveal, initParallax } from './animations'
+import { initTiltCards } from './tilt-cards'
+import { initCustomCursor } from './cursor'
 
 window.Alpine = Alpine
 
@@ -20,24 +23,30 @@ document.addEventListener('alpine:init', () => {
     }
   }))
 
-  Alpine.data('scrollReveal', () => ({
-    visible: false,
-    observer: null,
-    init() {
-      this.observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.visible = true
-            this.observer.unobserve(this.$el)
-          }
-        })
-      }, { threshold: 0.1 })
-      this.$nextTick(() => this.observer.observe(this.$el))
+  Alpine.data('threeHero', () => ({
+    cleanup: null,
+    ready: false,
+    async init() {
+      this.$nextTick(async () => {
+        const { initHeroScene } = await import('./three-scene')
+        this.cleanup = initHeroScene(this.$el)
+        this.ready = true
+        requestAnimationFrame(() => this.$el.classList.add('scene-ready'))
+      })
     },
     destroy() {
-      if (this.observer) this.observer.disconnect()
+      if (this.cleanup) this.cleanup()
     }
   }))
 })
 
 Alpine.start()
+
+document.addEventListener('DOMContentLoaded', () => {
+  initSmoothScroll()
+  initReadingProgress()
+  initParallax()
+  initTiltCards()
+  initCustomCursor()
+  initScrollReveal()
+})

@@ -1,6 +1,6 @@
 <section id="skills" class="py-24 lg:py-32 bg-surface/30">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-16" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Expertise</p>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
         Skills & Technologies
@@ -33,7 +33,7 @@
     @foreach ($skillGroups as $groupName => $skills)
       <div class="mb-16 last:mb-0">
         <h3 class="text-lg font-semibold text-primary/60 mb-6 tracking-wide">{{ $groupName }}</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" data-reveal data-reveal-dir="up">
           @foreach ($skills as $index => $skill)
             <div
               class="glass rounded-2xl p-5 hover:bg-white/[0.04] transition-all duration-300 group cursor-default"

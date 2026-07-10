@@ -1,6 +1,6 @@
 <section id="contact" class="py-24 lg:py-32">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto text-center" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="max-w-3xl mx-auto text-center" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">Contact</p>
       <h2 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-primary tracking-tight mb-6 leading-[1.1]">
         Let's Build Something <span class="bg-gradient-to-r from-accent to-hover bg-clip-text text-transparent">Great Together.</span>

@@ -1,7 +1,7 @@
 <section class="py-16 border-y border-white/5">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <p class="text-center text-xs text-secondary uppercase tracking-widest mb-10 font-medium">Trusted Technologies</p>
-    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12" data-reveal data-reveal-dir="up">
       @php
         $trustItems = [
           ['slug' => 'laravel', 'label' => 'Laravel'],

@@ -1,6 +1,6 @@
 <section id="projects" class="py-12 lg:py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-8" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="text-center mb-8" data-reveal data-reveal-dir="up">
       <p class="text-accent font-medium text-xs tracking-widest uppercase mb-2">Portfolio</p>
       <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-primary tracking-tight">
         Featured Projects
@@ -52,7 +52,7 @@
     }">
       <template x-for="(item, i) in slides" :key="i">
         <div x-show="current === i" x-transition:enter="transition-all duration-700 ease-in-out" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
-          <div class="glass rounded-xl overflow-hidden">
+          <div class="glass rounded-xl overflow-hidden" data-tilt="10">
             <div class="aspect-video bg-gradient-to-br from-accent/10 via-surface to-accent/5 flex items-center justify-center relative overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent z-10"></div>
               <template x-if="item.image">
@@ -93,7 +93,7 @@
       </div>
     </div>
 
-    <div class="text-center mt-6" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-up' : 'opacity-0'">
+    <div class="text-center mt-6" data-reveal data-reveal-dir="up">
       <a href="{{ url('/projects') }}" class="inline-flex items-center gap-2 px-5 py-2.5 glass-light text-primary text-xs font-medium rounded-xl transition-all duration-300 hover:bg-white/10">
         View All Projects
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>

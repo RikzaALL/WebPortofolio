@@ -46,6 +46,9 @@
   @stack('head')
 </head>
 <body class="antialiased">
+  <div id="reading-progress"></div>
+  <div id="custom-cursor"></div>
+
   <x-navbar />
 
   <main>

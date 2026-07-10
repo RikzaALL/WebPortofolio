@@ -1,7 +1,7 @@
 <section id="about" class="py-24 lg:py-32">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-      <div x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-left' : 'opacity-0'">
+      <div data-reveal data-reveal-dir="left">
         <p class="text-accent font-medium text-sm tracking-widest uppercase mb-4">About Me</p>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight mb-6">
           Building digital experiences that matter
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-3 gap-4" x-data="scrollReveal" x-bind:class="visible ? 'animate-fade-right' : 'opacity-0'">
+      <div class="grid grid-cols-3 gap-4" data-reveal data-reveal-dir="right">
         @php
           $stats = [
             ['value' => '15+', 'label' => 'Projects Completed'],
