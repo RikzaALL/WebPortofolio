@@ -1,5 +1,7 @@
 <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-20">
-  <div id="three-canvas" x-data="threeHero" class="absolute inset-0 z-[1] pointer-events-none"></div>
+  <div id="three-canvas" x-data="threeHero" class="absolute inset-0 z-[2] pointer-events-none"></div>
+  <div class="hero-dot-grid" style="z-index: 3"></div>
+  <div class="hero-blur-overlay" style="z-index: 4"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

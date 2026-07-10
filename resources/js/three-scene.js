@@ -58,29 +58,66 @@ export function initHeroScene(container) {
     meshes.push(mesh)
   })
 
-  const particleCount = 300
-  const particleGeo = new THREE.BufferGeometry()
-  const positions = new Float32Array(particleCount * 3)
-  const sizes = new Float32Array(particleCount)
-  for (let i = 0; i < particleCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 25
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 20
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 15
-    sizes[i] = Math.random() * 2 + 1
-  }
-  particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
-  particleGeo.setAttribute('size', new THREE.BufferAttribute(sizes, 1))
+  const dotCols = 45
+  const dotRows = 30
+  const dotSpacingX = 0.45
+  const dotSpacingY = 0.45
+  const dotTotal = dotCols * dotRows
+  const dotGeo = new THREE.BufferGeometry()
+  const dotPos = new Float32Array(dotTotal * 3)
+  const dotSizes = new Float32Array(dotTotal)
+  const dotPhases = new Float32Array(dotTotal)
 
-  const particleMat = new THREE.PointsMaterial({
+  let idx = 0
+  for (let row = 0; row < dotRows; row++) {
+    for (let col = 0; col < dotCols; col++) {
+      const x = (col - dotCols / 2) * dotSpacingX
+      const y = (row - dotRows / 2) * dotSpacingY
+      const z = (Math.random() - 0.5) * 8
+      dotPos[idx * 3] = x
+      dotPos[idx * 3 + 1] = y
+      dotPos[idx * 3 + 2] = z
+      dotSizes[idx] = 0.6 + Math.random() * 1.2
+      dotPhases[idx] = Math.random() * Math.PI * 2
+      idx++
+    }
+  }
+
+  dotGeo.setAttribute('position', new THREE.BufferAttribute(dotPos, 3))
+  dotGeo.setAttribute('size', new THREE.BufferAttribute(dotSizes, 1))
+
+  const dotMat = new THREE.PointsMaterial({
     color: 0x3B82F6,
-    size: 0.02,
+    size: 0.035,
     transparent: true,
-    opacity: 0.2,
+    opacity: 0.25,
     blending: THREE.AdditiveBlending,
     sizeAttenuation: true,
+    depthWrite: false,
   })
-  const particles = new THREE.Points(particleGeo, particleMat)
-  scene.add(particles)
+  const dotField = new THREE.Points(dotGeo, dotMat)
+  scene.add(dotField)
+
+  const glowCount = 80
+  const glowGeo = new THREE.BufferGeometry()
+  const glowPos = new Float32Array(glowCount * 3)
+  for (let i = 0; i < glowCount; i++) {
+    glowPos[i * 3] = (Math.random() - 0.5) * 18
+    glowPos[i * 3 + 1] = (Math.random() - 0.5) * 14
+    glowPos[i * 3 + 2] = (Math.random() - 0.5) * 8
+  }
+  glowGeo.setAttribute('position', new THREE.BufferAttribute(glowPos, 3))
+  const glowMat = new THREE.PointsMaterial({
+    color: 0x60A5FA,
+    size: 0.08,
+    transparent: true,
+    opacity: 0.08,
+    blending: THREE.AdditiveBlending,
+    sizeAttenuation: true,
+    depthWrite: false,
+  })
+  const glowDots = new THREE.Points(glowGeo, glowMat)
+  scene.add(glowDots)
 
   camera.position.z = 6
 
@@ -111,8 +148,25 @@ export function initHeroScene(container) {
       mesh.position.x = ud.origX + targetX * ud.mouseInfluence * 0.3
     })
 
-    particles.rotation.y = elapsed * 0.015
-    particles.rotation.x = Math.sin(elapsed * 0.008) * 0.08
+    const dotPosAttr = dotGeo.attributes.position
+    const dotPosArray = dotPosAttr.array
+    for (let i = 0; i < dotTotal; i++) {
+      const row = Math.floor(i / dotCols)
+      const col = i % dotCols
+      const baseX = (col - dotCols / 2) * dotSpacingX
+      const baseY = (row - dotRows / 2) * dotSpacingY
+      const phase = dotPhases[i]
+      const waveX = Math.sin(elapsed * 0.3 + phase + row * 0.15) * 0.08
+      const waveY = Math.cos(elapsed * 0.25 + phase + col * 0.12) * 0.06
+      const mouseOffsetX = targetX * (1 - Math.abs(dotPosArray[i * 3 + 2]) / 4) * 0.3
+      const mouseOffsetY = targetY * (1 - Math.abs(dotPosArray[i * 3 + 2]) / 4) * 0.2
+      dotPosArray[i * 3] = baseX + waveX + mouseOffsetX
+      dotPosArray[i * 3 + 1] = baseY + waveY + mouseOffsetY
+    }
+    dotPosAttr.needsUpdate = true
+
+    glowDots.rotation.y = elapsed * 0.008
+    glowDots.rotation.x = Math.sin(elapsed * 0.005) * 0.04
 
     camera.position.x += (targetX * 0.4 - camera.position.x) * 0.015
     camera.position.y += (targetY * 0.25 - camera.position.y) * 0.015
